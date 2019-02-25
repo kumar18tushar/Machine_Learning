@@ -45,8 +45,6 @@ def visualise(x,y):
     ax = fig.add_subplot(111, projection='3d')
     Axes3D.plot_surface(ax,thetaval0, thetaval1, jval)
     plt.show()
-    #ax = fig.add_subplot(111, projection='3d')
-    #Axes3D.plot_surface(thetaval0 , thetaval1 , jval)
 
 
 
@@ -57,19 +55,15 @@ def show_plot(x,y):
 	plt.ylabel('Profit in $10,000s')
 	#plt.show() 
 
-
-
-
-
-
+	
 
 def main():
-        x, y = np.loadtxt('ex1data1.txt',delimiter=',',unpack=True)         #creates a array(list) of x and y from ex1data1.txt
+        x, y = np.loadtxt('ex1data1.txt',delimiter=',',unpack=True)         
         m=len(x)
-        x.shape =(m,1)                                                      #changes x[] (1 x m) into dimension (m x 1)
+        x.shape =(m,1)                                                      
         xtemp=x
         y.shape=(m,1)
-        x=np.insert(x,0,1,axis=1)                                           #insert 1 at position 0 rowise https://stackoverflow.com/questions/36998260/prepend-element-to-numpy-array
+        x=np.insert(x,0,1,axis=1)                                           
 
         theta_init = np.array([0,0])
         theta_init.shape=(2,1)
@@ -80,25 +74,8 @@ def main():
 
         re=np.matmul(x,theta_val)
         visualise(x,y)
-        #show_plot(xtemp,y)
-        #plt.plot(xtemp,re)
-        #plt.show()
+   
 
-       
-
-
-
-
+     
 if __name__ == "__main__":
     main()
-
-
-
-#sum_matrix=x.sum(axis=0) means:
-# X = [[1],[2],[3]] then sum_matrix = [6]
-
-#sum_matrix=x.sum(axis=1) means:
-# X = [[1],[2],[3]] then sum_matrix = [1,2,3]
-
-#store the value of x transpose in p without changing x
-#p=np.transpose(x)
